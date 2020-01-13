@@ -22,7 +22,7 @@ Consumul de putere are trei componente:
                                                      Ptot=Pdyn+Pdp+Pstat
  #Puterea statica    
  
-         Pe durata starilor stabile unul dintre tranzistoare este blocat si prin urmare nu exista cale de curent inchisa intre VDD si GND.Ideal, inversorul nu consuma putere.In cazul real, exista un curent de scurgere prin jonctiunile drena-substrat sursasubstrat care sunt polarizate invers, precum si un curent de sub-prag prin tranzistoare.       
+ Pe durata starilor stabile unul dintre tranzistoare este blocat si prin urmare nu exista cale de curent inchisa intre VDD si GND.Ideal, inversorul nu consuma putere.In cazul real, exista un curent de scurgere prin jonctiunile drena-substrat sursasubstrat care sunt polarizate invers, precum si un curent de sub-prag prin tranzistoare.       
 Consumul de energie statică este produsul curentului de scurgere al dispozitivului și al tensiunii de alimentare. Consumul total de energie statică,PS, poate fi obținut astfel:
 
                                       PS= (curent de scurgere)x(tensiune de alimentare)  
@@ -37,7 +37,7 @@ unde Vcc este tensiunea de alimentare,iar Icc este curentul prin dispozitiv.
 
 #Puterea dinamica
 
-        Consumul de energie dinamică al unui circuit CMOS este calculat prin adăugarea consumului de energie tranzitorie (PT) și
+ Consumul de energie dinamică al unui circuit CMOS este calculat prin adăugarea consumului de energie tranzitorie (PT) și
 consumul de energie cu sarcină capacitivă (PL).
 
 Consumul de energie tranzitorie
@@ -47,14 +47,36 @@ Consumul de energie tranzitorie se datorează curentului care curge doar atunci 
 Consumul de energie tranzitorie poate fi calculat astfel:
 
                                                         Pt=Cpd x Vcc^2 x fi x Nsw
+                                                        
 unde Pt=consumul de energie tranzitorie,Vcc= tensiunea de alimentare,fi= frecventa semnalului de intrare,Nsw=numarul de biti,Cpd=capacitatea puterii disipate dinamice
 
 Consumul de energie al sarcinii capacitive
 
 Puterea suplimentară este consumată la încărcarea capacității de încărcare externă și depinde de frecvența de comutare. Următoarea ecuația poate fi utilizată pentru a calcula această putere dacă toate ieșirile au aceeași sarcină și se comută la aceeași frecvență de ieșire.
+
                                                          PL= Cl x Vcc^2 x fo x Nsw
                                                     
 PL= consumul de putere al sarcinii capacitive, Vcc=tensiunea de alimentare, fo=frecventa semnalului de iesire, CL= capacitatea externa,Nsw=numarul total de biti al comutarii la iesire.
+
+
+
+# Metode de optimizare a consumului de putere
+
+Majoritatea optimizărilor descrise în cele ce urmează se concentrează pe minimizarea puterii activității de comutare la diferite niveluri de abstractizare. În circuitele VLSI care folosesc porți logice bine concepute, puterea activitatii de comutarereprezintă peste 90% din puterea totală disipata.
+
+
+#Optimizare la nivel de circuit
+
+Tehnicile de optimizare sunt realizate pentru a reduce puterea activității de comutare a porților logice individuale și a circuitelor combinaționale la nivel de tranzistor.
+
+Optimizarea in cazul unui design complex ai gate-ului:
+
+In cazul unui design mai complex,de exemplu f=(a+b)c, se pot face optimizari privind plasarea individuala a tranzistorilor din poarta.De exemplu,partea N al unei porti CMOS implementand functia de mai sus,perechea de tranzistori paraleli a+b poate fi conectata la poarta de iesire.
+
+Optimizare la nivel de dimensiune al transistorului:
+
+Intr-un circuit combinational, dimensiunea tranzistorilor poate avea un impact major asupra delayului circuitului cat si al puterii disipate. Daca  tranzistorii dintr-o anumita poarta sunt numerosi,atunci delayul portii va creste,la fel si puterea disipata.Solutia este gasirea unui numar potrivit de tranzistori care minimizeaza puterea disipata chiar daca este o problema mai dificila.
+
 
 
 
