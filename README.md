@@ -20,5 +20,41 @@ Consumul de putere are trei componente:
             -Pstat – puterea statică disipată datorită curentului care circulă între liniile de alimentare în regim static de funcționare
             
                                                      Ptot=Pdyn+Pdp+Pstat
-                                                 
-                                                     
+ #Puterea statica    
+ 
+         Pe durata starilor stabile unul dintre tranzistoare este blocat si prin urmare nu exista cale de curent inchisa intre VDD si GND.Ideal, inversorul nu consuma putere.In cazul real, exista un curent de scurgere prin jonctiunile drena-substrat sursasubstrat care sunt polarizate invers, precum si un curent de sub-prag prin tranzistoare.       
+Consumul de energie statică este produsul curentului de scurgere al dispozitivului și al tensiunii de alimentare. Consumul total de energie statică,PS, poate fi obținut astfel:
+
+                                      PS= (curent de scurgere)x(tensiune de alimentare)  
+                              
+ 
+Curentul de scurgere ICC, împreună cu tensiunea de alimentare, determină consumul de energie statică în dispozitivele CMOS. Acest consum de energie statică este definit ca fiind silențios,PS si poate fi calculat astfel:
+
+                                                       Ps= Vcc x Icc
+                                                       
+unde Vcc este tensiunea de alimentare,iar Icc este curentul prin dispozitiv.
+
+
+#Puterea dinamica
+
+        Consumul de energie dinamică al unui circuit CMOS este calculat prin adăugarea consumului de energie tranzitorie (PT) și
+consumul de energie cu sarcină capacitivă (PL).
+
+Consumul de energie tranzitorie
+
+Consumul de energie tranzitorie se datorează curentului care curge doar atunci când tranzistoarele dispozitivelor trec de la o stare logică la alta. Acesta este rezultatul curentului necesar pentru încărcarea nodurilor interne (curentul de comutare), plus curentul
+(curent care curge de la VCC la GND când tranzistorul cu canal p și tranzistorul cu canal n se pornesc în același timp în timpul tranziției logice). Frecvența cu care se comută dispozitivul, plus timpii de creștere și cădere a semnalului de intrare cat si nodurile interne ale dispozitivului, au un efect direct asupra duratei curentului de "spike". Pentru tranziții rapide la intrare,curentul porții este neglijabil în comparație cu curentul de comutare. Din acest motiv, curentul de alimentare dinamic este guvernat de capacitanța internă a circuitului și de curentul de încărcare și descărcare a capacitatii de încărcare.
+Consumul de energie tranzitorie poate fi calculat astfel:
+
+                                                        Pt=Cpd x Vcc^2 x fi x Nsw
+unde Pt=consumul de energie tranzitorie,Vcc= tensiunea de alimentare,fi= frecventa semnalului de intrare,Nsw=numarul de biti,Cpd=capacitatea puterii disipate dinamice
+
+Consumul de energie al sarcinii capacitive
+
+Puterea suplimentară este consumată la încărcarea capacității de încărcare externă și depinde de frecvența de comutare. Următoarea ecuația poate fi utilizată pentru a calcula această putere dacă toate ieșirile au aceeași sarcină și se comută la aceeași frecvență de ieșire.
+                                                         PL= Cl x Vcc^2 x fo x Nsw
+                                                    
+PL= consumul de putere al sarcinii capacitive, Vcc=tensiunea de alimentare, fo=frecventa semnalului de iesire, CL= capacitatea externa,Nsw=numarul total de biti al comutarii la iesire.
+
+
+
