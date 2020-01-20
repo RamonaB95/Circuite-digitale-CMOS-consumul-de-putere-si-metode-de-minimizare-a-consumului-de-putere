@@ -1,13 +1,13 @@
 # Circuite-digitale-CMOS-consumul-de-putere-si-metode-de-minimizare-a-consumului-de-putere
 Acest proiect prezinta o perspectiva asupra consumului de putere in circuitele digitale CMOS si cateva tehnici de optimizare a consumului de putere. 
 
-#Introducere
+## Introducere
 
 Portile logice sunt realizate cu tranzistori cu efect de camp (MOS) complementari (C) si reprezinta elementele fundamentale de constructie ale circutelor logice moderne. Tehnologia ce foloseste circuite cu tranzistori MOS complementari este numita CMOS, si permite obtinerea la ora actuala a celor mai mari viteze la o putere consumata relativ redusa, fiind folosita in realizarea tuturor microprocesoarelor moderne.
 Disiparea puterii este definită ca energia furnizată de la sursă la sistem.Odata cu creșterea substanțială a calculatoarelor portabile, disiparea puterii a devenit o preocupare majoră acum. Aceasta duce la o creștere a densității cipului și frecventa de operare. Efectul direct al creșterii puterii disipate este o creștere a temperaturii, care în cele din urmă duce la o defecțiune a dispozitivului, cu excepția cazului în care este îngrijit.Acest lucrarea discută despre diferite surse de disipare a puterii și tehnici probabile de reducere a puterii la nivel de circuit si dispozitiv.
 
 
-#Consumul de putere
+## Consumul de putere
 
 Două componente determină consumul de energie electrică într-un circuit CMOS:
             - consumul de putere statica;
@@ -20,7 +20,7 @@ Consumul de putere are trei componente:
             -Pstat – puterea statică disipată datorită curentului care circulă între liniile de alimentare în regim static de funcționare
             
                                                      Ptot=Pdyn+Pdp+Pstat
- #Puterea statica    
+ ## Puterea statica    
  
  Pe durata starilor stabile unul dintre tranzistoare este blocat si prin urmare nu exista cale de curent inchisa intre VDD si GND.Ideal, inversorul nu consuma putere.In cazul real, exista un curent de scurgere prin jonctiunile drena-substrat sursasubstrat care sunt polarizate invers, precum si un curent de sub-prag prin tranzistoare.       
 Consumul de energie statică este produsul curentului de scurgere al dispozitivului și al tensiunii de alimentare. Consumul total de energie statică,PS, poate fi obținut astfel:
@@ -35,7 +35,7 @@ Curentul de scurgere ICC, împreună cu tensiunea de alimentare, determină cons
 unde Vcc este tensiunea de alimentare,iar Icc este curentul prin dispozitiv.
 
 
-#Puterea dinamica
+## Puterea dinamica
 
  Consumul de energie dinamică al unui circuit CMOS este calculat prin adăugarea consumului de energie tranzitorie (PT) și
 consumul de energie cu sarcină capacitivă (PL).
@@ -60,20 +60,20 @@ PL= consumul de putere al sarcinii capacitive, Vcc=tensiunea de alimentare, fo=f
 
 
 
-# Metode de optimizare a consumului de putere
+## Metode de optimizare a consumului de putere
 
 Majoritatea optimizărilor descrise în cele ce urmează se concentrează pe minimizarea puterii activității de comutare la diferite niveluri de abstractizare. În circuitele VLSI care folosesc porți logice bine concepute, puterea activitatii de comutarereprezintă peste 90% din puterea totală disipata.
 
 
-#Optimizare la nivel de circuit
+## Optimizare la nivel de circuit
 
 Tehnicile de optimizare sunt realizate pentru a reduce puterea activității de comutare a porților logice individuale și a circuitelor combinaționale la nivel de tranzistor.
 
-Optimizarea in cazul unui design complex ai gate-ului:
+### Optimizarea in cazul unui design complex ai gate-ului:
 
 In cazul unui design mai complex,de exemplu f=(a+b)c, se pot face optimizari privind plasarea individuala a tranzistorilor din poarta.De exemplu,partea N al unei porti CMOS implementand functia de mai sus,perechea de tranzistori paraleli a+b poate fi conectata la poarta de iesire.
 
-Optimizare la nivel de dimensiune al transistorului:
+### Optimizare la nivel de dimensiune al transistorului:
 
 Intr-un circuit combinational, dimensiunea tranzistorilor poate avea un impact major asupra delayului circuitului cat si al puterii disipate. Daca  tranzistorii dintr-o anumita poarta sunt numerosi,atunci delayul portii va creste,la fel si puterea disipata.Solutia este gasirea unui numar potrivit de tranzistori care minimizeaza puterea disipata chiar daca este o problema mai dificila.
 
